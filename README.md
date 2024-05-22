@@ -18,6 +18,10 @@ Frontend: http://localhost:8080
 
 El Backend escucha las peticiones a esa ruta: http://localhost:3000
 
-## Paso 5: Detener los Contenedores
+## Paso 4: Detener los Contenedores
 
 docker-compose down
+
+# Mejores Prácticas
+
+Si se ejecutan los pasos anteriores, el front y el backend estaran funcionando correctamente pero el backend hará la conexión a una base de datos que esta en vercel esto ocurre porque se ejecuta el script start de package.json, si se quiere usar en local se debería cambiar en el dockerfile del backend start por devL para ejecutar el proyecto con el .env.dev que hace la conexión local (Se debe modificar .env.dev con los datos de tu base de datos local)

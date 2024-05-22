@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_PORT=5432
+      - DB_HOST=ep-curly-sun-a4k7ufcb-pooler.us-east-1.aws.neon.tech
+      - DB_USERNAME=default
+      - DB_PASSWORD=fU6IpmWtQOX4
+      - DB_NAME=verceldb
+      - DATABASE_URL=postgres://default:fU6IpmWtQOX4@ep-curly-sun-a4k7ufcb-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

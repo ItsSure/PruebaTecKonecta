@@ -28,6 +28,8 @@ Si se ejecutan los pasos anteriores, el front y el backend estaran funcionando c
 
 # Observaciones
 
+- Hay un usuario creado con el rol de administrador pueden hacer login con el correo: admin@gmail.com y la contrasena: admin
+
 - El fichero createdb.sql contiene los querys para la creación de las tablas, secuencias y relaciones en la base de datos.
 
 - Hay problemas cuando se hace login las primeras veces con el token de autorización (Es algo que me di cuenta que pasa cuando se corre el front y back con docker pero mientras desarrollaba no)
